@@ -5,12 +5,23 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>Story Map</title>
+    <style>
+	body {
+		margin: 0px; 
+		padding: 0px;
+	}
+	#storymap {
+	  width: 600px; 
+	  height: 500px; 
+	  border: 2px solid black;
+	}
+    </style>
     <script
       src="https://maps.google.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w&callback=initialize&v=weekly"
     ></script>
     <script>
       function initialize() {
-        var myCenter = new google.maps.Center(40.711833, -74.012594);
+        var myCenter = new google.maps.LatLng(40.711833, -74.012594);
         var myOptions = {
           zoom: 18,
           center: myCenter,
@@ -26,22 +37,12 @@
           myOptions
         );
       }
-    </script>
-
-	<style>
-	body {
-		margin: 0px; 
-		padding: 0px;
-	}
-	#storymap {
-	  width: 600px; 
-	  height: 500px; 
-	  border: 2px solid black;
-	}
-  </style>
+    </script>	
   </head>
+	
   <body onload="initialize()">
     <div id="storymap">
-	  </div>
+    </div>
   </body>
+	
 </html>
