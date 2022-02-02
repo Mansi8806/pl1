@@ -36,6 +36,24 @@
           myOptions
         );
       }
+      const flightPlanCoordinates = [
+			{ lat: 40.689277, lng: -74.044572 },
+			{ lat: 40.712984, lng: -74.013265 },
+			{ lat: 40.748549, lng: -73.985616 },
+			{ lat: 40.792473, lng: -73.951905 },
+		  ];
+		  const flightPath = new google.maps.Polyline({
+			path: flightPlanCoordinates,
+			geodesic: true,
+			strokeColor: "#FF0000",
+			strokeOpacity: 1.0,
+			strokeWeight: 2,
+		  });
+
+		  flightPath.setMap(map);
+		}
+		// [END maps_polyline_simple]
+		export { initialize };	    
     </script>	
   </head>
 	
