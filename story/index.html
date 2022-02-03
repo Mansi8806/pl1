@@ -4,7 +4,7 @@
   <!--Most basic template used here is:  https://googlemaps.github.io/js-samples/samples/45degrees/index.html -->
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <title>Story Map</title>
+    <title>Tourist Attractions New York</title>
     <style>
 	body {
 		margin: 0px; 
@@ -35,20 +35,21 @@
           document.getElementById("storymap"),
           myOptions
         );
-      
+      /*Draw tourist attractions places path on map inspired from 
+	  https://github.com/googlemaps/js-samples/blob/main/samples/polyline-simple/src/index.ts */
       const flightPlanCoordinates = [
 			{ lat: 40.689277, lng: -74.044572 },
 			{ lat: 40.712984, lng: -74.013265 },
 			{ lat: 40.748549, lng: -73.985616 },
 			{ lat: 40.792473, lng: -73.951905 },
-		  ];
+		  ];  /* Co-ordinates for path of tourist places*/
 		  const flightPath = new google.maps.Polyline({
 			path: flightPlanCoordinates,
 			geodesic: true,
 			strokeColor: "#800000",
 			strokeOpacity: 1.0,
 			strokeWeight: 3,
-		  });
+		  });  /* Style for path line on map */
 
 		  flightPath.setMap(map);
       }		    
