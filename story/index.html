@@ -50,6 +50,12 @@
 			strokeOpacity: 1.0,
 			strokeWeight: 3,
 		  });  /* Style for path line on map */
+       const liberty = { lat: 40.689097, lng: -74.044613 };  
+		var marker =  new google.maps.Marker({
+			position: liberty,
+			label: T,
+			map: map,
+            }); 
 
 		  flightPath.setMap(map);
       }		    
