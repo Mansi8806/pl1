@@ -64,6 +64,39 @@
 			content: "Statue of Liberty"
 		});
 		infowindow.open(map,marker1); /* Information about marker1 */
+	      
+	        var WTC = new google.maps.LatLng(40.712984, -74.013265);
+                var marker2 = new google.maps.Marker ({
+			position: WTC
+			});
+		marker2.setMap(map);	
+		
+		var infowindow = new google.maps.InfoWindow ({
+			content: "World Trade Center"
+		});
+		infowindow.open(map,marker2);
+		
+		var ESB = new google.maps.LatLng(40.748549, -73.985616);
+                var marker3 = new google.maps.Marker ({
+			position: ESB
+			});
+		marker3.setMap(map);	
+		
+		var infowindow = new google.maps.InfoWindow ({
+			content: "Empire State Building"
+		});
+		infowindow.open(map,marker3);
+		
+		var Museum = new google.maps.LatLng(40.792473, -73.951905);
+                var marker4 = new google.maps.Marker ({
+			position: Museum
+			});
+		marker4.setMap(map);	
+		
+		var infowindow = new google.maps.InfoWindow ({
+			content: "New York City Museum"
+		});
+		infowindow.open(map,marker4);
       }		    
     </script>	
   </head>
