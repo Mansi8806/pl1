@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <!--Most basic template used here is:  https://googlemaps.github.io/js-samples/samples/45degrees/index.html -->
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	  <!--Most basic template used here is:  https://googlemaps.github.io/js-samples/samples/45degrees/index.html -->
     <title>Tourist Attractions New York</title>
-    <style>
+	  <!-- Internal CSS to define map window -->
+    <style>  
 	body {
 		margin: 0px; 
 		padding: 0px;
@@ -16,10 +17,12 @@
 	  border: 2px solid black;
 	}
     </style>
+	  <!-- Link to get Google Map using API key-->
     <script
       src="https://maps.google.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w&callback=initialize&v=weekly"
     ></script>
     <script>
+	    /* Function definition to hold map items */
       function initialize() {
         var myCenter = new google.maps.LatLng(40.736073, -73.993638);
         var myOptions = {
@@ -35,8 +38,7 @@
           document.getElementById("storymap"),
           myOptions
         );
-      /*Draw tourist attractions places path on map inspired from 
-	  https://github.com/googlemaps/js-samples/blob/main/samples/polyline-simple/src/index.ts */
+      /*Draw tourist attractions places path on map inspired from https://github.com/googlemaps/js-samples/blob/main/samples/polyline-simple/src/index.ts */
        const flightPlanCoordinates = [
 			{ lat: 40.689277, lng: -74.044572 },
 			{ lat: 40.712984, lng: -74.013265 },
@@ -54,9 +56,10 @@
 	  flightPath.setMap(map);
 	      
       /*Creating marker and giving information about that inspired from https://www.w3schools.com/graphics/google_maps_overlays.asp */
-		var liberty = new google.maps.LatLng(40.689277, -74.044572);
+		var liberty = new google.maps.LatLng(40.689277, -74.044572); /*Co-ordinates for marker location*/
                 var marker1 = new google.maps.Marker ({
-			position: liberty
+			position: liberty,
+			animation:google.maps.Animation.BOUNCE
 			}); /*creates marker for Statue of Liberty Tourist attraction*/
 		marker1.setMap(map);	
 		
@@ -68,7 +71,7 @@
 	        var WTC = new google.maps.LatLng(40.712984, -74.013265);
                 var marker2 = new google.maps.Marker ({
 			position: WTC
-			});
+			}); /*creates marker for World Trade Center Tourist attraction*/
 		marker2.setMap(map);	
 		
 		var infowindow2 = new google.maps.InfoWindow ({
@@ -79,7 +82,7 @@
 		var ESB = new google.maps.LatLng(40.748549, -73.985616);
                 var marker3 = new google.maps.Marker ({
 			position: ESB
-			});
+			}); /*creates marker for Empire State Building Tourist attraction*/
 		marker3.setMap(map);	
 		
 		var infowindow3 = new google.maps.InfoWindow ({
@@ -89,8 +92,9 @@
 		
 		var Museum = new google.maps.LatLng(40.792473, -73.951905);
                 var marker4 = new google.maps.Marker ({
-			position: Museum
-			});
+			position: Museum,
+			animation:google.maps.Animation.BOUNCE
+			}); /*creates marker for City Museum Tourist attraction*/
 		marker4.setMap(map);	
 		
 		var infowindow4 = new google.maps.InfoWindow ({
@@ -98,7 +102,7 @@
 		});
 		infowindow4.open(map,marker4);
       }		    
-    </script>	
+  </script>	
   </head>
 	
   <body onload="initialize()">
