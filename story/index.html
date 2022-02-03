@@ -23,7 +23,7 @@
       function initialize() {
         var myCenter = new google.maps.LatLng(40.736073, -73.993638);
         var myOptions = {
-          zoom: 10,
+          zoom: 12,
           center: myCenter,
           mapTypeId: google.maps.MapTypeId.TERRAIN,
           overviewMapControl: true,
@@ -36,24 +36,34 @@
           myOptions
         );
       /*Draw tourist attractions places path on map inspired from 
-	  https://github.com/googlemaps/js-samples/blob/main/samples/polygon-simple/src/index.ts */
-      const RectangleCoordinates = [
-		    { lat: 40.818847, lng: -74.017318 },
-			{ lat: 40.788247, lng: -73.908497 },
-			{ lat: 40.624001, lng: -74.033070 },
-			{ lat: 40.677533, lng: -74.098028 },
-		  ];
-		  const TouristSpotArea = new google.maps.Polygon({
-			paths: RectangleCoordinates,
+	  https://github.com/googlemaps/js-samples/blob/main/samples/polyline-simple/src/index.ts */
+       const flightPlanCoordinates = [
+			{ lat: 40.689277, lng: -74.044572 },
+			{ lat: 40.712984, lng: -74.013265 },
+			{ lat: 40.748549, lng: -73.985616 },
+			{ lat: 40.792473, lng: -73.951905 },
+		  ];  /* Co-ordinates for path of tourist places*/
+		  const flightPath = new google.maps.Polyline({
+			path: flightPlanCoordinates,
 			geodesic: true,
-			strokeColor: "#FF0000",
+			strokeColor: "#800080",
 			strokeOpacity: 1.0,
-			strokeWeight: 2,
-			fillColor: "#FF0000",
-            fillOpacity: 0.35,
-		  });
+			strokeWeight: 3,
+		  });  /* Style for path line on map */
 
-		  TouristSpotArea.setMap(map);	      
+	  flightPath.setMap(map);
+	      
+      /*Creating marker and giving information about that inspired from https://www.w3schools.com/graphics/google_maps_overlays.asp */
+		var liberty = new google.maps.LatLng(40.689277, -74.044572);
+                var marker1 = new google.maps.Marker ({
+			position: liberty
+			}); /*creates marker for Statue of Liberty Tourist attraction*/
+		marker1.setMap(map);	
+		
+		var infowindow = new google.maps.InfoWindow ({
+			content: "Statue of Liberty"
+		});
+		infowindow.open(map,marker1); /* Information about marker1 */
       }		    
     </script>	
   </head>
